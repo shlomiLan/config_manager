@@ -131,3 +131,4 @@ dmypy.json
 !*.secret
 .gitsecret/settings/dev.yml
 .gitsecret/settings/mew_test.yml
+.gitsecret/settings/test.yml
