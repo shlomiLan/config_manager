@@ -2,7 +2,7 @@ import os
 import json
 import re
 
-from utils import run
+from config_manager.utils import run
 
 
 PROTECTED_SUFFIX = 'PROTECTED'
@@ -54,13 +54,15 @@ class Heroku(Local):
         command = f'access'
         self.run_command(command)
 
-        # TODO: extract to config class?
+        self.reset_env_vars()
+
+    def get_env_vars(self):
         command = f'config --json'
         result = self.run_command(command)
-        result_dict = json.loads(self.ansi_escape.sub('', result.stdout))
-        self.reset_current_env_var(result_dict)
+        return json.loads(self.ansi_escape.sub('', result.stdout))
 
-    def reset_current_env_var(self, current_vars):
+    def reset_env_vars(self):
+        current_vars = self.get_env_vars()
         if not current_vars:
             return
 

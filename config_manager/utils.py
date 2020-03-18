@@ -10,7 +10,7 @@ def run(c, command, with_venv=False, warn_only_not_fail=False):
         command = '{} && {}'.format(get_venv_action(), command)
 
     print('Running: {}'.format(command))
-    return c.run(command, warn=warn_only_not_fail, pty=True)
+    return c.run(command, warn=warn_only_not_fail, pty=True, in_stream=False)
 
 
 def load_yaml_from_file(file_path):

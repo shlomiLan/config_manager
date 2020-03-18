@@ -2,12 +2,12 @@ import os
 
 from invoke import task
 
-from providers import Heroku, TravisCI, Local
-from utils import load_yaml_from_file, BASEDIR, run
+from config_manager.providers import Heroku, TravisCI, Local
+from config_manager.utils import load_yaml_from_file, BASEDIR, run
 
 DEV_ENV_NAME = 'dev'
 SETTINGS_EXT = 'yml'
-SECRETS_PATH = os.path.join(BASEDIR, '.gitsecret')
+SECRETS_PATH = os.path.join(BASEDIR, '..', '.gitsecret')
 SETTINGS_PATH = os.path.join(SECRETS_PATH, 'settings')
 
 
