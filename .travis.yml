@@ -6,7 +6,7 @@ script:
 #  - wget -qO - https://api.bintray.com/users/sobolevn/keys/gpg/public.key | sudo apt-key add -
 #  - sudo apt-get update && sudo apt-get install git-secret
 #  - git secret reveal
-  - python -m pytest --verbose
+  - python -m pytest --verbose -s
 install:
   - pip install -r development.txt
 #after_success:
