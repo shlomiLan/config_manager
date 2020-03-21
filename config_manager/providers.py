@@ -59,6 +59,10 @@ class Heroku(Local):
     def get_env_vars(self):
         command = f'config --json'
         result = self.run_command(command)
+        import logging
+        logging.error('-----------------------------------------')
+        logging.error(f'result: {result}, result type: {type(result)}')
+        logging.error('-----------------------------------------')
         return json.loads(self.ansi_escape.sub('', result.stdout))
 
     def reset_env_vars(self):
