@@ -1,17 +1,13 @@
 language: python
 python:
-  - 3.6.7
+- 3.6.7
 script:
-#  - echo "deb https://dl.bintray.com/sobolevn/deb git-secret main" | sudo tee -a /etc/apt/sources.list
-#  - wget -qO - https://api.bintray.com/users/sobolevn/keys/gpg/public.key | sudo apt-key add -
-#  - sudo apt-get update && sudo apt-get install git-secret
-#  - git secret reveal
-  - python -m pytest --verbose -s
+- python -m pytest --verbose -s
 install:
-  - pip install -r development.txt
-#after_success:
-#- codecov
-#- python-codacy-coverage -r coverage.xml
-#branches:
-#  only:
-#  - master
+- pip install -r development.txt
+env:
+  global:
+    secure: M+Qul38vAHaT2OzwqWPxKGSq4BXz91jdDDYchDmvBt5wwELBN2WDsJk61PuFONn2j56N9LkJLC0kzWWZ/L1TLSvJtqft9iEUGexz/m1XojskS/jt840YC3EQGb9nuOxT8RrgKpXBb4ZC8JfbVrVmUpgtZiZWWQay4F2547vGiQGhLMAPNDduqnnixZz6V2V9kwQkPaXy4Bnpe7/nIX/XnRR705rfojv9TX9V9naMo7ANqcyT2+DWCFvng8EY/pBEj/oUdNw9edqtBRqWKC+JBvdN6+UalzI8IsU2AlKD4080wWy7OLbJqEo3/m7ion4yy2bhqFkAj04Kg4I8kxge6u0EKQUIwS17TiGUE46nFCEnsjtg8fQ8CqfGS+UWGJTBVr7kOHwSITIx1Rq33SBsFOifxd2POWE+CR2U2R+p7EEQNawnQWkb3mSXVo6hEQtHlYzNVEhIKWxnVELaXgpQxToORsV2Pk0M8iQIep8t2i44jwb46PdIpNwBotl01qLhhpv7o9ov/aiZEiS8d+2UYVPF9j4BapmzyIYqb7pjZy/unGep71Ocukz4uWMYzYQug+TSvcu3f7ns33B2MVM7spAjvzXXcWRPqvjftYic/2sVu5ftiHJjLKPRSxLm6abpsHBm72Ogle4ul3sbvy0/Z/+ubcpdbTpJ12s++jQ3Psg=
+deploy:
+  api_key:
+    secure: WcbKN46VplueQpDD5PQDZkTZrwee+fq4HMWVbMc7JGGxr9+V2KAWtYRIrLcDkfFKp96qignpIuNJk/ovcwXo9wa/uzr4G4MlQQvGbOiezsOhQxGTolgOuuE+g6cPqubLMiL1p587M5q7MZT0CTKJLup06oT+2ixitSdlfsYsWXbgRiepI51jZvnL+bRTX/ELgd8QZLULYyY84gdbNrmtiC0ofFxGS8R4dm9Aa9DuaTh3WmmOfzhwTzWE6TZ1pBqljTANPaZH+kZMm3EoswhBw1bwTfRhD2x1QrJXoBmxj0WZkD0k8nFKcFY0cY+Dt+VvWMSfbazJm/6ESNFUNEZU7WwhA7X2nflice0yZl0pyX9roWrVXDh6RpX3LbWCvT/hu14neRz4aFdSunMgh1v9yaI47XwPzccyg48w6ly6sX02lDrSUV8SszqwLuOcJGNom8+rbZN6LFvAl4RTo8MuTqnJA9vpYvr/lLIlNAm62yZa6aGBLQuf1JIh1xyaVcVLWPjNKu52IqBUAGQ40H3aEvqP3xlEtqK0/LVhc1mwcdxsFObNaS/0mcqlk1nEKy5kkRILeM+8KJ/HE4PZBx2XQkkNbV54yu7B/3N8b860DxfWXjFvAkD9xkaZnlDcBUKT57INUZx8pgdn8N/iJH+ddR0+tVBnOAi3r3xtATBt7ZA=
