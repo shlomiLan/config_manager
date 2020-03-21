@@ -1,11 +1,10 @@
-def test_new():
-    assert 1 == 2
-
 from invoke import Context
 from config_manager.providers import Heroku
-#
-#
-# class TestHeroku:
+
+
+class TestHeroku:
+    def test_new(self):
+        assert 1 == 2
 #     heroku_app_name = 'test1-shlomi'
 #     context = Context()
 #     heroku = Heroku(context, heroku_app_name)
