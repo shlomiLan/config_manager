@@ -1,8 +1,8 @@
 def test_new():
     assert 1 == 2
 
-# from invoke import Context
-# from config_manager.providers import Heroku
+from invoke import Context
+from config_manager.providers import Heroku
 #
 #
 # class TestHeroku:
